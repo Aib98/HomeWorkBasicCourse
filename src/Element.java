@@ -13,16 +13,6 @@ public class Element {
     }
 
 
-
-    public void setRightAnswerIndex(int rightAnswerIndex) {
-        this.rightAnswerIndex = rightAnswerIndex;
-    }
-
-    public int getRightAnswerIndex() {
-        return rightAnswerIndex;
-    }
-
-
     @Override
     public String toString() {
         return  "Вопрос: " + questions + '\n' +
@@ -31,18 +21,12 @@ public class Element {
                 ", test=" + test +
                 '}';
     }
-    public boolean ask (){// Доработать! в классе Element в метод public boolean ask (int rightAnswerIndex)
-        // не стоит передавать аргумент, так как rightAnswerIndex - это уже поле класса
-
-        Scanner scanner = new Scanner(System.in);
+    public boolean ask (){
+          Scanner scanner = new Scanner(System.in);
         if(Integer.parseInt(scanner.nextLine()) == rightAnswerIndex) {
             return true;
         }
         return false;
-    }
-    private Answer answer;
-    public void setQuestions(Answer answer){
-        this.answer = answer;
     }
 
 

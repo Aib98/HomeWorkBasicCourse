@@ -15,37 +15,18 @@ public class TestClassMethod {
                 {'\n'+ "1. While"+'\n'+  "2. for"+'\n'+  "3. loop"}  //убрать вопросы и ответы
         };
 
-
-
 //        Test test = new Test();
 
         for (int i = 0; i < allQuestion.length; i++) {
-
-            // Доработать! - в методе main логика наполнение и создания объектов Element и Answer работает неправильно:
-            //Answer answer = new Answer("Результат - ");
-            //Element element = new Element(allQuestion[i], allAnswer [i], rightAnswerIndex [i]);
-
-
             Answer[] answer = new Answer[allAnswer[i].length];
                 for (int k = 0; k < answer.length; k++) {
                     answer[k] = new Answer(allAnswer[i][k]);
             Element element = new Element(allQuestion[i], answer, rightAnswerIndex [i]);
             System.out.println(element);
 
-
-
-
-//            boolean checkedAnswer = element.ask(int rightAnswerIndex[i]);
-//            if (checkedAnswer) test.rightCount();
-//            answer.showText(checkedAnswer);
             }
         }
 
-//        System.out.println('\n'+ "Итого:" + '\n'+ "Правильных ответов: " + test.getRightAnswerCount());
-//        int count = rightAnswerIndex.length;
-//        int right = test.getRightAnswerCount();
-//        int wrong = count-right;
-//        System.out.println("Ошибочных ответов: " + wrong);
     }
 }
 

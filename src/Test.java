@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Test {//Доработать! - в классе Test надо реализовать метод passTest()
     private Element[] questions;
     private int rightAnswerCount = 0;
@@ -16,11 +18,20 @@ public class Test {//Доработать! - в классе Test надо ре�
     }
 
     public void passTest() {
-//        boolean checkedAnswer =
+//        for (int n = 0; n < questions.length; n++) {
+//            boolean checkedAnswer;
+//            if (checkedAnswer) heckedAnswer rightCount();
+//            else checkedAnswer;
+//
+//
+//        }
+//        boolean checkedAnswer = questions;
 //        if (checkedAnswer) passTest();
 //        else passTest();
     }
-//
+
+
+    //
 
 //        System.out.println('\n' + "Итого:" + '\n' + "Правильных ответов: " + test.getRightAnswerCount());
 //        int count = rightAnswerIndex.length;
