@@ -7,13 +7,13 @@ public class Answer {
         this.text = text;
     }
 
-    public void showText (boolean answer){
+    public void showText(boolean answer) {
         if (answer) System.out.println(text + "Вы ответили правильно");
         else System.out.println(text + "Вы ошиблись");
     }
 
-
-    public String getText() {
-        return text;
+    @Override
+    public String toString() {
+        return text + '\n';
     }
 }

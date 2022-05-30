@@ -23,20 +23,26 @@ public class Element {
     }
 
 
-
+    @Override
+    public String toString() {
+        return  "Вопрос: " + questions + '\n' +
+                "Варианты ответов:" + Arrays.toString(answers) +
+                "Введите ваш ответ: "+ ask() +
+                ", test=" + test +
+                '}';
+    }
     public boolean ask (){// Доработать! в классе Element в метод public boolean ask (int rightAnswerIndex)
         // не стоит передавать аргумент, так как rightAnswerIndex - это уже поле класса
+
         Scanner scanner = new Scanner(System.in);
         if(Integer.parseInt(scanner.nextLine()) == rightAnswerIndex) {
             return true;
         }
         return false;
     }
-    @Override
-    public String toString() {
-        return  "Вопрос: " + questions + '\n' +
-                "Варианты ответов:" + Arrays.toString(answers) + '\n' +
-                "Введите ваш ответ: "+ ask();
+    private Answer answer;
+    public void setQuestions(Answer answer){
+        this.answer = answer;
     }
 
 

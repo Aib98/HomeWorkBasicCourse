@@ -1,4 +1,9 @@
 public class TestClassMethod {
+    @Override
+    public String toString() {
+        return "TestClassMethod{}";
+    }
+
     public static void main(String[] args) {
         int[] rightAnswerIndex = {3, 3, 1};
         String[] allQuestion = {"В файл с каким расширением компилируется java-файл?",
@@ -10,7 +15,9 @@ public class TestClassMethod {
                 {'\n'+ "1. While"+'\n'+  "2. for"+'\n'+  "3. loop"}  //убрать вопросы и ответы
         };
 
-        Test test = new Test();
+
+
+//        Test test = new Test();
 
         for (int i = 0; i < allQuestion.length; i++) {
 
@@ -24,6 +31,7 @@ public class TestClassMethod {
                     answer[k] = new Answer(allAnswer[i][k]);
             Element element = new Element(allQuestion[i], answer, rightAnswerIndex [i]);
             System.out.println(element);
+
 
 
 

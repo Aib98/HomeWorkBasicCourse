@@ -15,11 +15,11 @@ public class Test {//Доработать! - в классе Test надо ре�
         return rightAnswerCount;
     }
 
-//    public void passTest() {
-//        boolean checkedAnswer = questions(getRightAnswerCount());
+    public void passTest() {
+//        boolean checkedAnswer =
 //        if (checkedAnswer) passTest();
 //        else passTest();
-//    }
+    }
 //
 
 //        System.out.println('\n' + "Итого:" + '\n' + "Правильных ответов: " + test.getRightAnswerCount());
