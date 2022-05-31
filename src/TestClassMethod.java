@@ -10,24 +10,28 @@ public class TestClassMethod {
                 "С помощью какой команды git можно получить полную копию удаленного репозитория?",
                 "Какой применяется цикл, когда не известно количество итераций?"
         };
-        String[] [] allAnswer = {{'\n'+"1. cs"+'\n'+ "2. java"+'\n'+ "3. class"+'\n'+ "4. exe"},
-                {'\n'+ "1. commit"+'\n'+  "2. push"+'\n'+  "3. clone"+'\n'+  "4. copy"},
-                {'\n'+ "1. While"+'\n'+  "2. for"+'\n'+  "3. loop"}  //убрать вопросы и ответы
+        String[][] allAnswer = {{'\n' + "1. cs" + '\n' + "2. java" + '\n' + "3. class" + '\n' + "4. exe"},
+                {'\n' + "1. commit" + '\n' + "2. push" + '\n' + "3. clone" + '\n' + "4. copy"},
+                {'\n' + "1. While" + '\n' + "2. for" + '\n' + "3. loop"}  //убрать вопросы и ответы
         };
 
-//        Test test = new Test();
+
+        Element[] elements = new Element[allQuestion.length];
 
         for (int i = 0; i < allQuestion.length; i++) {
             Answer[] answer = new Answer[allAnswer[i].length];
-                for (int k = 0; k < answer.length; k++) {
-                    answer[k] = new Answer(allAnswer[i][k]);
-            Element element = new Element(allQuestion[i], answer, rightAnswerIndex [i]);
-            System.out.println(element);
 
+            for (int k = 0; k < answer.length; k++) {
+                answer[k] = new Answer(allAnswer[i][k]);
             }
+            Element element = new Element(allQuestion[i], answer, rightAnswerIndex[i]);
+            elements[i] = element;
         }
-
+        Test test = new Test(elements);
+        test.passTest();
     }
+
+
 }
 
 

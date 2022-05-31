@@ -18,13 +18,16 @@ public class Test {//Доработать! - в классе Test надо ре�
     }
 
     public void passTest() {
-//        for (int n = 0; n < questions.length; n++) {
+        for (int n = 0; n < questions.length; n++) {
+            System.out.println(questions [n]);
+
 //            boolean checkedAnswer;
-//            if (checkedAnswer) heckedAnswer rightCount();
+//            if (checkedAnswer) =  rightCount();
 //            else checkedAnswer;
 //
 //
-//        }
+        }
+
 //        boolean checkedAnswer = questions;
 //        if (checkedAnswer) passTest();
 //        else passTest();

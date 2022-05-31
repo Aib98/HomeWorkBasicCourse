@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Element {
     private String questions;
-    private Answer [] answers;
+    private Answer[] answers;
     private int rightAnswerIndex;
 
     public Element(String questions, Answer[] answers, int rightAnswerIndex) {
@@ -15,15 +15,16 @@ public class Element {
 
     @Override
     public String toString() {
-        return  "Вопрос: " + questions + '\n' +
+        return "Вопрос: " + questions + '\n' +
                 "Варианты ответов:" + Arrays.toString(answers) +
-                "Введите ваш ответ: "+ ask() +
+                "Введите ваш ответ: " + ask() +
                 ", test=" + test +
                 '}';
     }
-    public boolean ask (){
-          Scanner scanner = new Scanner(System.in);
-        if(Integer.parseInt(scanner.nextLine()) == rightAnswerIndex) {
+
+    public boolean ask() {
+        Scanner scanner = new Scanner(System.in);
+        if (Integer.parseInt(scanner.nextLine()) == rightAnswerIndex) {
             return true;
         }
         return false;
@@ -31,6 +32,7 @@ public class Element {
 
 
     private Test test;
+
     public void setTest(Test test) {
         this.test = test;
     }

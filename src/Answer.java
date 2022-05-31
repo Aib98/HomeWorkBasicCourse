@@ -16,4 +16,8 @@ public class Answer {
     public String toString() {
         return text + '\n';
     }
+
+    public String getText() {
+        return text;
+    }
 }
