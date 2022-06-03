@@ -14,12 +14,12 @@ public class Main {
         Person person3 = new Person("Сидоров И.И.", 35);
         Person[] persons = {person1, person2, person3};
 
-        Acount acount1 = new Acount(111);
-        Acount acount2 = new Acount(112);
-        Acount acount3 = new Acount(113);
-        Acount acount4 = new Acount(114);
-        Acount acount5 = new Acount(115);
-        Acount acount6 = new Acount(116);
+        Acount acount1 = new Acount(111, person1);
+        Acount acount2 = new Acount(112, person2);
+        Acount acount3 = new Acount(113, person2);
+        Acount acount4 = new Acount(114, person3);
+        Acount acount5 = new Acount(115, person3);
+        Acount acount6 = new Acount(116, person3);
         Acount[] acounts = {acount1, acount2, acount3, acount4, acount5, acount6};
         Acount[] acountsPetrov = {acount1};
         Acount[] acountIvanov = {acount2, acount3};
