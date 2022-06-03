@@ -1,11 +1,15 @@
+import java.util.Objects;
+
 public class Acount {
     private int bill;
 
-    public Acount(int bill){
-        this.bill = bill;
-    }
-    public Acount(){
 
+
+    private Person person;
+
+    public Acount(int bill, Person person) {
+        this.bill = bill;
+        this.person = person;
     }
 
     public int getBill() {
@@ -14,6 +18,19 @@ public class Acount {
 
     public void setBill(int bill) {
         this.bill = bill;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Acount acount = (Acount) o;
+        return bill == acount.bill;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bill);
     }
 
     @Override

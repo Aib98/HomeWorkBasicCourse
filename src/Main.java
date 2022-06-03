@@ -34,11 +34,11 @@ public class Main {
         client.put(person3,acountsSidorov);
 //        System.out.println(client.equals(persons));
 
-        String findName = "Иванов А.И.";
+        String findName = "Сидоров И.И.";
         boolean billFound = client.containsKey(persons);
         client.forEach((key, key2) -> {
             if (key.getName().equals(findName)){
-                for (int i = 0; i < key.getName().length() ; i++) {
+                for (int i = 0; i < client.size() ; i++) {
                     System.out.println(key.getName()+ " " + key2[i]);
                 }
 
