@@ -8,13 +8,13 @@ public class Answer {
     }
 
     public void showText(boolean answer) {
-        if (answer) System.out.println(text + "Вы ответили правильно");
-        else System.out.println(text + "Вы ошиблись");
+        if (answer) System.out.println("Вы выбрали ответ: " + text + " - ответ правильный");
+        else System.out.println("Вы выбрали ответ: " + text + " - ответ ошибочный");
     }
 
     @Override
     public String toString() {
-        return text + '\n';
+        return text;
     }
 
     public String getText() {

@@ -1,14 +1,19 @@
-import java.util.Arrays;
-
 public class Test {//Доработать! - в классе Test надо реализовать метод passTest()
     private Element[] questions;
     private int rightAnswerCount = 0;
+    private int wrongAnswerCount = 0;
 
     public Test(Element[] questions) {
         this.questions = questions;
     }
+
+
     public void rightCount(){
-        rightAnswerCount++;
+        rightAnswerCount = rightAnswerCount+1;
+
+    }
+    public void wrongCount(){
+        wrongAnswerCount = wrongAnswerCount+1;
     }
     public Test(){
     }
@@ -17,50 +22,29 @@ public class Test {//Доработать! - в классе Test надо ре�
         return rightAnswerCount;
     }
 
-    public void passTest() {
-        for (int n = 0; n < questions.length; n++) {
-            System.out.println(questions [n]);
-
-//            boolean checkedAnswer;
-//            if (checkedAnswer) =  rightCount();
-//            else checkedAnswer;
-//
-//
-        }
-
-//        boolean checkedAnswer = questions;
-//        if (checkedAnswer) passTest();
-//        else passTest();
+    public int getWrongAnswerCount() {
+        return wrongAnswerCount;
     }
 
+    public void showText(boolean answer) {// Пробую посчитать кол-во правильных ответов
+        if (answer) rightCount();
+        else wrongCount();
+    }
 
-    //
+    public void passTest() {
+             for (int n = 0; n < questions.length; n++) {
+            questions[n].ask();
+                 System.out.println(rightAnswerCount);
+                 System.out.println(wrongAnswerCount);
+         }
+    }
 
-//        System.out.println('\n' + "Итого:" + '\n' + "Правильных ответов: " + test.getRightAnswerCount());
-//        int count = rightAnswerIndex.length;
-//        int right = test.getRightAnswerCount();
-//        int wrong = count - right;
-//        System.out.println("Ошибочных ответов: " + wrong);
+    public void setRightAnswerCount(int rightAnswerCount) {
+        this.rightAnswerCount = rightAnswerCount;
+    }
 
+    public void setWrongAnswerCount(int wrongAnswerCount) {
+        this.wrongAnswerCount = wrongAnswerCount;
+    }
 
 }
-//    public void setRightAnswerCount(int rightAnswerCount) {
-//        this.rightAnswerCount = rightAnswerCount;
-//    }
-//
-//    public int getRightAnswerCount() {
-//        return rightAnswerCount;
-//    }
-//
-//    protected Question question;
-//    public void setQuestion(Question question) {
-//        this.question = question;
-//    }
-//
-//    public String[] getQuestion() {
-//        return Question;
-//    }
-//
-//    private void passTest(){
-//    }
-

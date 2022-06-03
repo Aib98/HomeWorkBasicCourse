@@ -23,18 +23,27 @@ public class Element {
     }
 
     public boolean ask() {
-        Scanner scanner = new Scanner(System.in);
-        if (Integer.parseInt(scanner.nextLine()) == rightAnswerIndex) {
-            return true;
+        System.out.println(questions);
+        for (int i = 0; i < answers.length; i++) {
+            System.out.println(answers[i]);
         }
-        return false;
-    }
+        Scanner scanner = new Scanner(System.in);
+        int userInput = Integer.parseInt(scanner.nextLine());
+        if (userInput == rightAnswerIndex) {
+            answers[userInput].showText(true);
+            return true;
 
+        }
+            answers[userInput].showText(false);
+            return false;
+    }
 
     private Test test;
 
     public void setTest(Test test) {
         this.test = test;
+
+
     }
 
 }
