@@ -31,11 +31,13 @@ public class Element {
         int userInput = Integer.parseInt(scanner.nextLine());
         if (userInput == rightAnswerIndex) {
             answers[userInput].showText(true);
+ //           test.rightCount();
             return true;
 
         }
-            answers[userInput].showText(false);
-            return false;
+        answers[userInput].showText(false);
+//        test.wrongCount();
+        return false;
     }
 
     private Test test;
