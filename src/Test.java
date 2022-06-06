@@ -33,10 +33,16 @@ public class Test {//Доработать! - в классе Test надо ре�
 
     public void passTest() {
              for (int n = 0; n < questions.length; n++) {
-            questions[n].ask();
-                 System.out.println(rightAnswerCount);
-                 System.out.println(wrongAnswerCount);
-         }
+                 boolean elementResalt = questions[n].ask();
+                 if (elementResalt){
+                     rightAnswerCount ++;
+                 }
+                 else {
+                     wrongAnswerCount++;
+                 }
+             }
+        System.out.println('\n' + "Итого правильных ответов: " + rightAnswerCount);
+        System.out.println("Итого ошибочных ответов: " + wrongAnswerCount);
     }
 
     public void setRightAnswerCount(int rightAnswerCount) {

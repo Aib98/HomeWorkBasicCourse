@@ -30,13 +30,10 @@ public class Element {
         Scanner scanner = new Scanner(System.in);
         int userInput = Integer.parseInt(scanner.nextLine());
         if (userInput == rightAnswerIndex) {
-            answers[userInput].showText(true);
- //           test.rightCount();
+            answers[userInput - 1].showText(true);
             return true;
-
         }
         answers[userInput].showText(false);
-//        test.wrongCount();
         return false;
     }
 

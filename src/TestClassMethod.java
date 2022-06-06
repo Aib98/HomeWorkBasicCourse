@@ -10,9 +10,9 @@ public class TestClassMethod {
                 "С помощью какой команды git можно получить полную копию удаленного репозитория?",
                 "Какой применяется цикл, когда не известно количество итераций?"
         };
-        String[][] allAnswer = {{"", "1. cs", "2. java", "3. class" , "4. exe"},
-                {"", "1. commit", "2. push", "3. clone", "4. copy"},
-                {"", "1. While", "2. for", "3. loop"}  //убрать вопросы и ответы
+        String[][] allAnswer = {{"1. cs", "2. java", "3. class" , "4. exe"},
+                {"1. commit", "2. push", "3. clone", "4. copy"},
+                {"1. While", "2. for", "3. loop"}  //убрать вопросы и ответы
         };
 
 
@@ -30,9 +30,6 @@ public class TestClassMethod {
         }
         Test test = new Test(elements);
         test.passTest();
-
-        System.out.println('\n' + "Итого правильных ответов: " + test.getRightAnswerCount());
-        System.out.println("Итого ошибочных ответов: " + test.getWrongAnswerCount());
 
     }
 
