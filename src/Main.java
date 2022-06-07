@@ -59,8 +59,8 @@ public class Main {
 
 
 
-        Object findName = client.get("Сидоров И.И.");
-        System.out.println(findName.equals(person1));
+        Object findName = "Сидоров И.И.";
+        System.out.println(findName.equals(person3.getName()));
 
 //        boolean billFound = client.contansKey(persons);
 //        client.forEach((key, key2) -> {
@@ -82,19 +82,19 @@ public class Main {
 ////
 ////            System.out.printf("Key: %s  Value: %s \n", item.getKey(), item.getValue());
 //        }
-        Collection<Object> collection = client.keySet();
-        Object desiredPerson = new Person("Петров В.В.", 33);
-        for (Object key : collection){
-            Object obj = client.get(key);
-            if (client.containsKey(persons)) {
-                if (desiredPerson.equals(obj)){
-                    System.out.println(desiredPerson.hashCode());
-                    return;
-                }
-                System.out.println(desiredPerson);
-            }
-            System.out.println(desiredPerson.hashCode());
-        }
+//        Collection<Object> collection = client.keySet();
+//        Object desiredPerson = new Person("Петров В.В.", 33);
+//        for (Object key : collection){
+//            Object obj = client.get(key);
+//            if (client.containsKey(persons)) {
+//                if (desiredPerson.equals(obj)){
+//                    System.out.println(desiredPerson.hashCode());
+//                    return;
+//                }
+//                System.out.println(desiredPerson);
+//            }
+//            System.out.println(desiredPerson.hashCode());
+//        }
 
 
 
