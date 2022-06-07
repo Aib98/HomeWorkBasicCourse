@@ -16,6 +16,10 @@ public class Acount {
         return bill;
     }
 
+    public Person getPerson() {
+        return person;
+    }
+
     public void setBill(int bill) {
         this.bill = bill;
     }

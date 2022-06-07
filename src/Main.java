@@ -1,7 +1,7 @@
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
+import java.util.Queue;
 
 public class Main {
 
@@ -14,8 +14,8 @@ public class Main {
         Person person1 = new Person("Петров В.В.", 33);
         Person person2 = new Person("Иванов А.И.", 34);
         Person person3 = new Person("Сидоров И.И.", 35);
-        Person[] persons = {person1, person2, person3};
-
+        Person[] persons = {person1, person2, person3};// не нужны массивы
+//
 
 
 //        HashMap <String,Object> client = new HashMap<String,Object>();
@@ -50,22 +50,55 @@ public class Main {
         client.put(acount5, person3);
         client.put(acount6, person3);
 
-        for(Map.Entry<Object, Object> item : client.entrySet()){
-//            System.out.printf("Key: %s  Value: %s \n", item.getKey(), item.getValue());
-        }
+        // Перераспределяем Equals и HashCode в классах.
+        // Ищем клиента по счету. Создаем новую переменную (с помощью ALT + Enter) и по клиенту с помощью get ищем персону
+        // Обязательно создаем новый аккаунт, а не цифры т.к. в противном случае ХэшКод будет разный
+        Object findPerson = client.get(new Acount(111, null));
+        System.out.println(findPerson);
+
+
+
+
+        Object findName = client.get("Сидоров И.И.");
+        System.out.println(findName.equals(person1));
+
+//        boolean billFound = client.contansKey(persons);
+//        client.forEach((key, key2) -> {
+//            if (key.getName().equals(findName)){
+//                for (int i = 0; i < client.size() ; i++) {
+//                    System.out.println(key.getName()+ " " + key2[i]);
+//                }
+//
+//            }
+//        });
+
+
+//        Object findBill = client.get(new Acount(null, person1));
+//
+
+
+//        for(Map.Entry<Object, Object> entry : client.entrySet()){
+////            Class<Person> temp = entry.getValue().getClass();
+////
+////            System.out.printf("Key: %s  Value: %s \n", item.getKey(), item.getValue());
+//        }
         Collection<Object> collection = client.keySet();
-        Object desiredPerson = new Object();
+        Object desiredPerson = new Person("Петров В.В.", 33);
         for (Object key : collection){
             Object obj = client.get(key);
             if (client.containsKey(persons)) {
                 if (desiredPerson.equals(obj)){
-                    System.out.println(desiredPerson);
+                    System.out.println(desiredPerson.hashCode());
                     return;
                 }
                 System.out.println(desiredPerson);
             }
             System.out.println(desiredPerson.hashCode());
         }
+
+
+
+
     }
 
 
