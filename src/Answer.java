@@ -1,5 +1,3 @@
-import java.security.PublicKey;
-
 public class Answer {
     private String text;
 
@@ -14,10 +12,6 @@ public class Answer {
 
     @Override
     public String toString() {
-        return text;
-    }
-
-    public String getText() {
         return text;
     }
 }

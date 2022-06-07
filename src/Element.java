@@ -12,7 +12,6 @@ public class Element {
         this.rightAnswerIndex = rightAnswerIndex;
     }
 
-
     @Override
     public String toString() {
         return "Вопрос: " + questions + '\n' +
@@ -33,17 +32,12 @@ public class Element {
             answers[userInput - 1].showText(true);
             return true;
         }
-        answers[userInput].showText(false);
+        answers[userInput -1].showText(false);
         return false;
     }
 
     private Test test;
-
     public void setTest(Test test) {
         this.test = test;
-
-
     }
-
 }
-
