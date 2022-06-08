@@ -1,7 +1,4 @@
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
 
@@ -60,7 +57,29 @@ public class Main {
 
 
         Object findName = "Сидоров И.И.";
-        System.out.println(findName.equals(person3.getName()));
+        System.out.println(findName.equals(person1.getName()));
+
+        // entrySet - возвращает множество со значения карты.
+        for (Map.Entry<Object, Object> entry : client.entrySet()){
+
+            System.out.println(" " + entry.getValue() + "   " + entry.getKey());
+        }
+        System.out.println();
+
+        // Iterator - интерфейс для организации цикла для перебора ключей
+        // hasNext - true, если есть еще элементы
+        // next возвращает следующий элемент
+        Iterator<Map.Entry<Object, Object>> entries = client.entrySet().iterator();
+        while (entries.hasNext()){
+            Map.Entry<Object, Object> entry = entries.next();
+            System.out.println(" " + entry.getKey() + " " + entry.getValue());
+        }
+        System.out.println();
+
+        // KeySet - возвращает множество ключей
+        for (Object key : client.keySet()){
+            System.out.println(" " + key + " " + client.get(key));
+        }
 
 //        boolean billFound = client.contansKey(persons);
 //        client.forEach((key, key2) -> {
