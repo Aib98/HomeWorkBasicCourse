@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Person {
 
     private String name;
     private int age;
+    private ArrayList<Acount> acounts;
 
     public Person(String name, int age) {
         this.name = name;
@@ -11,6 +14,27 @@ public class Person {
     }
     public Person(){
         }
+
+    public List<Acount> setAcounts(ArrayList<Acount> acounts) {
+        this.acounts = acounts;
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Фамилия ИО - " + name + '\'' +
+                ", возраст " + age +
+                ", Счета: " + acounts
+                ;
+    }
+    //    public Set<Acount> getAcounts() {
+//        return acounts;
+//    }
+
+    //    public List<Acount> setAcounts(Set<Acount> acounts) {// Добавилась автоматически
+//        this.acounts = acounts;
+//        return null;
+//    }
 
     public String getName() {
         return name;
@@ -42,10 +66,4 @@ public class Person {
         return Objects.hash(name, age);
     }
 
-    @Override
-    public String toString() {
-        return "ФИО - " + name + '\'' +
-                " возраст - " + age +
-                ";";
-    }
 }

@@ -7,29 +7,11 @@ public class Main {
         return "Main{}";
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Person person1 = new Person("Петров В.В.", 33);
         Person person2 = new Person("Иванов А.И.", 34);
         Person person3 = new Person("Сидоров И.И.", 35);
         Person[] persons = {person1, person2, person3};// не нужны массивы
-//
-
-
-//        HashMap <String,Object> client = new HashMap<String,Object>();
-//
-
-//        HashMap<String,Object> map= new HashMap<String, Object>();
-//        Set<Map.Entry<String,Object>> entrySet=map.entrySet();
-//
-//        Object desiredObject=new Object();//что хотим найти
-//        for (Map.Entry<String,Object> pair : entrySet) {
-//            if (desiredObject.equals(pair.getValue())) {
-//                return pair.getKey();// нашли наше значение и возвращаем  ключ
-//            }
-//        }
-
-
-
 
         Acount acount1 = new Acount(111, person1);
         Acount acount2 = new Acount(112, person2);
@@ -39,7 +21,7 @@ public class Main {
         Acount acount6 = new Acount(116, person3);
 
 
-        HashMap <Object, Object> client = new HashMap<Object, Object>();
+        HashMap<Acount, Person> client = new HashMap<Acount, Person>();
         client.put(acount1, person1);
         client.put(acount2, person2);
         client.put(acount3, person2);
@@ -50,130 +32,80 @@ public class Main {
         // Перераспределяем Equals и HashCode в классах.
         // Ищем клиента по счету. Создаем новую переменную (с помощью ALT + Enter) и по клиенту с помощью get ищем персону
         // Обязательно создаем новый аккаунт, а не цифры т.к. в противном случае ХэшКод будет разный
-        Object findPerson = client.get(new Acount(111, null));
+        //Вариант поиска по счету:
+        Person findPerson = client.get(new Acount(116, null));
         System.out.println(findPerson);
 
 
 
 
-        Object findName = "Сидоров И.И.";
-        System.out.println(findName.equals(person1.getName()));
+        ArrayList<Acount> acountsByClient1 = new ArrayList<>(Arrays.asList(acount1));
+        ArrayList<Acount> acountsByClient2 = new ArrayList<>(Arrays.asList(acount2, acount3));
+        ArrayList<Acount> acountsByClient3 = new ArrayList<>(Arrays.asList(acount4, acount5, acount6));
 
-        // entrySet - возвращает множество со значения карты.
-        for (Map.Entry<Object, Object> entry : client.entrySet()){
+        HashMap<Person, List<Acount>> bills = new HashMap<>();
+//        bills.put(person1, person1.getAcounts(acountsByClient1));// Collections bkb Arrays
+//        bills.put(person2, person2.getAcounts(new ArrayList<>(Arrays.asList(acount2, acount3)));
+//        bills.put(person3, person3.setAcounts((Set<Acount>) acountsByClient3);
+//        bills.put(person1, person1.setAcounts(Set<Acount> acountsByClient1);
+        Set<Acount> ArrayList;
+        bills.put(person1, person1.setAcounts(acountsByClient1));
+        bills.put(person2, person2.setAcounts(acountsByClient2));
+        bills.put(person3, person3.setAcounts(acountsByClient3));
 
-            System.out.println(" " + entry.getValue() + "   " + entry.getKey());
-        }
-        System.out.println();
+        // Варианты поиска по имени:
 
-        // Iterator - интерфейс для организации цикла для перебора ключей
-        // hasNext - true, если есть еще элементы
-        // next возвращает следующий элемент
-        Iterator<Map.Entry<Object, Object>> entries = client.entrySet().iterator();
-        while (entries.hasNext()){
-            Map.Entry<Object, Object> entry = entries.next();
-            System.out.println(" " + entry.getKey() + " " + entry.getValue());
-        }
-        System.out.println();
+        Person findName = (Person) bills.get(person2);
+        Person searchBill = new Person("Иванов А.И.", 34);
 
-        // KeySet - возвращает множество ключей
-        for (Object key : client.keySet()){
-            System.out.println(" " + key + " " + client.get(key));
-        }
+        System.out.println(searchBill);
+        System.out.println(person2);
+        System.out.println(searchBill.hashCode() == person2.hashCode());
 
-//        boolean billFound = client.contansKey(persons);
-//        client.forEach((key, key2) -> {
-//            if (key.getName().equals(findName)){
-//                for (int i = 0; i < client.size() ; i++) {
-//                    System.out.println(key.getName()+ " " + key2[i]);
-//                }
+        System.out.println(findPerson);
+        System.out.println(bills.get(person2));
+        System.out.println(findName);
+
 //
-//            }
-//        });
+//        System.out.println(findName.equals(person3.getName()));
+//         System.out.println(person2.hashCode());
+//         System.out.println(new Person("Иванов А.И.", 34).hashCode());
+ //       System.out.println(person3.getName().hashCode());
 
 
-//        Object findBill = client.get(new Acount(null, person1));
-//
 
 
-//        for(Map.Entry<Object, Object> entry : client.entrySet()){
-////            Class<Person> temp = entry.getValue().getClass();
-////
-////            System.out.printf("Key: %s  Value: %s \n", item.getKey(), item.getValue());
+//        Map<Integer, String> client = new HashMap<Integer, String>();
+//        client.put(42561, "Иванов Василий");
+//        client.put(42562, "Василий Иванов");
+//        client.put(49654, "Смирнов Николай");
+//        client.put(78953, "Сидоров Роман");
+//        System.out.println(client.get(42561));
+//        client.replace(49654,"Смирнов Николай Васильевич");
+//        System.out.println(client.get(49654));
+//        System.out.println(client.values());
+//        System.out.println(client.keySet());
+//        for (Map.Entry<Integer,String> temp:client.entrySet()) {
+//            System.out.println("Код: " + temp.getKey()+ " Имя: " + temp.getValue());
 //        }
-//        Collection<Object> collection = client.keySet();
-//        Object desiredPerson = new Person("Петров В.В.", 33);
-//        for (Object key : collection){
-//            Object obj = client.get(key);
-//            if (client.containsKey(persons)) {
-//                if (desiredPerson.equals(obj)){
-//                    System.out.println(desiredPerson.hashCode());
-//                    return;
-//                }
-//                System.out.println(desiredPerson);
-//            }
-//            System.out.println(desiredPerson.hashCode());
-//        }
-
-
-
 
     }
 
 
 
-//        Acount[] acounts = {acount1, acount2, acount3, acount4, acount5, acount6};
-//        Acount[] acountsPetrov = {acount1};
-//        Acount[] acountIvanov = {acount2, acount3};
-//        Acount[] acountsSidorov = {acount4,acount5, acount6};
-//          printPerson(persons);
-//          printAcount(acounts);
-//          printAcounts(acounts);
-
-//        HashMap <Person, Acount[]> client = new HashMap<>();
-//        client.put(person1,acountsPetrov);
-//        client.put(person2,acountIvanov);
-//        client.put(person3,acountsSidorov);
-//        System.out.println(client.equals(persons));
-
-
-
-
-//        String findName = "Сидоров И.И.";
-//        boolean billFound = client.containsKey(persons);
-//        client.forEach((key, key2) -> {
-//            if (key.getName().equals(findName)){
-//                for (int i = 0; i < client.size() ; i++) {
-////                    System.out.println(key.getName()+ " " + key2[i]);
-//                }
+//    private static Map<Acount,Person> getAccountClient() {
+//        Person client1 = new Client("Сидоров", 1999);
+//        Client client2 = new Client("Петров", 1985);
+//        Client client3 = new Client("Михайлов", 1990);
 //
-//            }
-//        });
+//        Map<Acount, Person> accountClient = new HashMap<>();
+//        accountClient.put(new Acount(12345), client1);
+//        accountClient.put(new Account(87654), client1);
+//        accountClient.put(new Account(54324), client1);
+//        accountClient.put(new Account(32324), client2);
+//        accountClient.put(new Account(32162), client3);
+//        return accountClient; }
 
 
-//        int findBill = 116;
-//        Boolean nameFound = client.containsKey(acounts);
-//        client.forEach((key, key2) -> {
-//            if (key.getName(findBill)){
-//                System.out.println(key.getAge()+ "000 " + key2.toString());
-//            }
-//        });
-
-
-//    }
-//    private static void printPerson (Person[] persons){
-//        System.out.println("Список клиентов: ");
-//        for (Person person : persons) {
-//            System.out.println(person.toString());
-//        }
-//        System.out.println();
-//    }
-//    private static void printAcount (Acount[] acounts){
-//        System.out.println("Список счетов:");
-//        for (Acount acount : acounts){
-//            System.out.print(acount.toString()+ "; ");
-//        }
-//        System.out.println();
-//    }
 
 }
