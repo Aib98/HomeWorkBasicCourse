@@ -17,40 +17,15 @@ public class Person {
 
     public List<Acount> setAcounts(ArrayList<Acount> acounts) {
         this.acounts = acounts;
-        return null;
+        return acounts;
     }
 
     @Override
     public String toString() {
         return "Фамилия ИО - " + name + '\'' +
-                ", возраст " + age +
+                ", возраст - " + age +
                 ", Счета: " + acounts
                 ;
-    }
-    //    public Set<Acount> getAcounts() {
-//        return acounts;
-//    }
-
-    //    public List<Acount> setAcounts(Set<Acount> acounts) {// Добавилась автоматически
-//        this.acounts = acounts;
-//        return null;
-//    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     @Override

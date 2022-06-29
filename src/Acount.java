@@ -3,25 +3,11 @@ import java.util.Objects;
 public class Acount {
     private int bill;
 
-
-
     private Person person;
 
     public Acount(int bill, Person person) {
         this.bill = bill;
         this.person = person;
-    }
-
-    public int getBill() {
-        return bill;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setBill(int bill) {
-        this.bill = bill;
     }
 
     @Override
